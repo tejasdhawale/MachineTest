@@ -5,15 +5,14 @@ package com.machinetest;
  */
 public interface Maincontract {
     interface viewMain{
-
-       public void init();
-
-
+    public void init();
+public  void successfullLogin();
     }
     interface presenterMain{
 
     }
     interface modelMain{
+
 
     }
 }

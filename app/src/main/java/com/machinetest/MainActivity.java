@@ -43,7 +43,13 @@ MainPresenter presenter;
 
     }
 
-@OnClick(R.id.btn_submit)
+    @Override
+    public void successfullLogin() {
+        Toast.makeText(mContext,"Loginuser: Successfull login ",Toast.LENGTH_SHORT).show();
+
+    }
+
+    @OnClick(R.id.btn_submit)
     public void Loginuser(View view)
     {
         String temp=et_email.getText().toString();
