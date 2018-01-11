@@ -3,12 +3,14 @@ package com.machinetest;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
@@ -27,6 +29,8 @@ MainPresenter presenter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+        mContext=this;
 
         presenter=new MainPresenter(this);
     }
@@ -39,12 +43,13 @@ MainPresenter presenter;
 
     }
 
-    @OnClick(R.id.btn_submit)
+@OnClick(R.id.btn_submit)
     public void Loginuser(View view)
     {
         String temp=et_email.getText().toString();
         String temp_pass=et_pass.getText().toString();
-        Toast.makeText(mContext,"Submit Clicked By "+temp,Toast.LENGTH_SHORT).show();
+        Log.e("test", "Loginuser: Submit Clicked By "+temp);
+        Toast.makeText(mContext,"Loginuser: Submit Clicked By "+temp,Toast.LENGTH_SHORT).show();
         presenter.submitlogin(et_email,et_pass);
     }
 
